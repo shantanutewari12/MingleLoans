@@ -1,49 +1,42 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-
-import './Login.css'
-
+import './Login.css';
 
 function Login() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // Get the navigate function
- 
+    const handleLogin = (e) => {
+        e.preventDefault();
 
-  const handleLogin = (e) => {
-   
-    e.preventDefault();
+        const isAuthenticated = true;
 
-    // Simulate a successful login without API calls
-    // You can add your authentication logic here
-    const isAuthenticated = true; // Change this to true if authentication succeeds
+        if (isAuthenticated) {
+            // Simulate retrieving the user's name (you would normally fetch this from your backend)
+            const userName = localStorage.getItem('userName') || 'Guest';
 
-    if (isAuthenticated) {
-      // Store authentication data in localStorage
-      localStorage.setItem('isAuthenticated', 'true');
+            // Store the user authentication flag in localStorage
+            localStorage.setItem('isAuthenticated', 'true');
+            
+            // Navigate to the dashboard after login
+            navigate('/dashboard');
+        } else {
+            console.log('Login failed');
+        }
+    };
 
-      // Redirect to the /dashboard route
-      navigate('/dashboard');
-    } else {
-      // Handle failed login (e.g., show an error message)
-      console.log('Login failed');
-    }
-  };
-
- 
-
-  return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit">Login</button>
-      </form>
-      <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
-    </div>
-  );
+    return (
+        <div>
+            <h2>Login</h2>
+            <form onSubmit={handleLogin}>
+                <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+        </div>
+    );
 }
 
 export default Login;

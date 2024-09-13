@@ -1,0 +1,39 @@
+/* Products.css */
+
+.product-list {
+  padding: 20px;
+  max-width: 1200px; /* Adjust this as per your layout needs */
+  margin: 0 auto;
+}
+
+.product-list .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  gap: 20px; /* Space between items */
+}
+
+.product-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  text-align: center;
+  max-width: 100%; /* Ensure responsiveness */
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* For smaller screens, change the number of items per row */
+@media screen and (max-width: 900px) {
+  .product-list .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on small screens */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-list .grid {
+    grid-template-columns: 1fr; /* 1 item per row on mobile screens */
+  }
+}
