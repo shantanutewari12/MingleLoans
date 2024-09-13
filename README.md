@@ -6,6 +6,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## Tech Stack
+
+- **ReactJS**: A JavaScript library for building user interfaces.
+- **Shadcn**: A component library for React.
+- **React Bootstrap**: Bootstrap components for React.
+
+# App is hosted on :- https://dashboradapp.netlify.app/
+
 ### `npm start`
 
 Runs the app in the development mode.\
