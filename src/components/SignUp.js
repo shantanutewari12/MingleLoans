@@ -41,7 +41,6 @@ function Signup() {
             return;
         }
 
-        // Store the user's name in localStorage
         localStorage.setItem('userName', formData.name);
 
         setTimeout(() => {

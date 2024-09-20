@@ -11,21 +11,14 @@ function Login() {
         e.preventDefault();
 
         const isAuthenticated = true;
-
         if (isAuthenticated) {
-            // Simulate retrieving the user's name (you would normally fetch this from your backend)
             const userName = localStorage.getItem('userName') || 'Guest';
-
-            // Store the user authentication flag in localStorage
-            localStorage.setItem('isAuthenticated', 'true');
-            
-            // Navigate to the dashboard after login
+            localStorage.setItem('isAuthenticated', 'true');            
             navigate('/dashboard');
         } else {
             console.log('Login failed');
         }
     };
-
     return (
         <div>
             <h2>Login</h2>

@@ -6,7 +6,6 @@ function Dashboard() {
     const [userName, setUserName] = useState('');
 
     useEffect(() => {
-        // Retrieve the user's name from localStorage
         const storedUserName = localStorage.getItem('userName') || 'User';
         setUserName(storedUserName);
     }, []);
