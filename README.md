@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+# Dashboard app for MingleLoans
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tech Stack
 
-## Available Scripts
+- **ReactJS**: A JavaScript library for building user interfaces.
+- **Shadcn**: A component library for React.
+- **React Bootstrap**: Bootstrap components for React.
 
-In the project directory, you can run:
+# App is hosted on :- https://dashboradapp.netlify.app/
 
 ### `npm start`
 
